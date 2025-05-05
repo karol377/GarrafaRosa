@@ -1,43 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
     background-image: url("https://wallpapers.com/images/hd/high-resolution-world-map-with-national-flags-6egft7igudpt5xwc.jpg");
-}
-div{
-    background-color: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    padding: 80px;
-    border-radius: 15px;
-    color: #fff;
-    width: clamp(200px, 20vw, 600px);
-    height:clamp(200px, 12vh, 500px);
-}
-input{
-    padding: 15px;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    width: clamp(40px, 14.325vw, 200px);
-    margin-bottom: 15px;
-    border-radius: 10px;
-
+    background-size: cover;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
 }
 
-button{
-    background-color: dodgerblue;
-    border: none;
-    padding: 15px;
-    width: clamp(25px, 15vw, 80px);
-    height: auto;
-    border-radius: 10px;
+form {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 354px;
+    width: 545px;
+    background-color: #000000e5;
+    border-radius: 20px;
+    align-items: center;
+    justify-items: center;
+}
+
+form h1 {
     color: white;
-    font-size: 15px;
-
-    
+    font-family: arial;
+    font-weight: 300;
+    font-style: italic  ;
 }
-button:hover{
-    background-color: deepskyblue;
+
+form input {
+    display: grid;
+    width: 332px;
+    height: 57px;
+    border-radius: 10px;
+    text-align: center;
+    color: #606060;
+    font-size: 23px;
+    font-family: arial;
+    font-weight: 300;
+    font-style: italic;
+}
+
+form button {
+    display: grid;
+    width: 110px;
+    height: 45px;
+    justify-items: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #50CAFF;
+    border: none;
     cursor: pointer;
+    font-family: arial;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 15px;
 }

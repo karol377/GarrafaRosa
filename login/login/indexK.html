@@ -8,30 +8,15 @@
     <link rel="stylesheet" href='styleK.css'>
 </head>
 <body>
-    <div>
-        <form id="login">
-            <h1>Escreva seu nome para jogar</h1>
-            <input type="text" id="nome" placeholder="Seu Nome" required > 
-            <button id="cmc" type="submit" onclick="ir()">Enviar</button>
-        </form>
- 
-        </body>
-        </html>
-        <script src="scriptK.js"></script>
-       
-       
-             
-        
-    </div>
-
-
-
-    <script>
-
-        document.getElementById("cmc").onclick = function(){
-            window.location.href="../jogo/indexX.html";
-        }
-
-
-    </script>
+    <form>
+        <h1>Escreva seu nome para jogar</h1>
+        <input type="text" placeholder="Seu Nome" required > 
+        <button type="submit" onclick="ir()">Enviar</button>
+    </form>
 </body>
+<script src="scriptK.js">
+    document.getElementById("cmc").onclick = function(){
+        window.location.href="../jogo/indexX.html";
+    }
+</script>
+</html>
