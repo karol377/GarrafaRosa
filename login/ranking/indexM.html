@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranking</title>
+    <link rel="stylesheet" href="styleM.css">
+
+</head>
+<body>
+    <h1>🏆 Ranking de Pontuações</h1>
+    <ul id="ranking-list"></ul>
+
+    <script>
+        const lista = document.getElementById('ranking-list');
+        const ultimaPontuacao = localStorage.getItem('ultimaPontuacao') || 0;
+
+        // Recupera ranking do localStorage
+        const ranking = JSON.parse(localStorage.getItem('ranking')) || [];
+
+        // Adiciona nova pontuação
+        ranking.push({ data: new Date().toLocaleString(), pontos: parseInt(ultimaPontuacao) });
+
+        // Ordena por pontuação
+        ranking.sort((a, b) => b.pontos - a.pontos);
+
+        // Limita para top 10
+        const top10 = ranking.slice(0, 10);
+
+        // Salva de volta no localStorage
+        localStorage.setItem('ranking', JSON.stringify(top10));
+
+        // Exibe na tela
+        top10.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.textContent = `${index + 1}º - ${item.pontos} pontos (${item.data})`;
+            lista.appendChild(li);
+        });
+    </script>
+</body>
+</html>
