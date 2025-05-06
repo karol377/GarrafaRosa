@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranking de Jogadores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        #ranking-list {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0;
+            list-style: none;
+            text-align: left;
+        }
+        li {
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+        .top1 {
+            font-weight: bold;
+            color: gold;
+        }
+        #clear-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: crimson;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #clear-button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏆 Ranking dos Jogadores</h1>
+    <ul id="ranking-list"></ul>
+    <button id="clear-button">Limpar Ranking</button>
+
+    <script>
+        const lista = document.getElementById('ranking-list');
+        const clearButton = document.getElementById('clear-button');
+
+        function carregarRanking() {
+            lista.innerHTML = ''; // Limpa lista atual
+            let ranking = JSON.parse(localStorage.getItem('ranking')) || [];
+
+            ranking.sort((a, b) => {
+                if (b.pontuacao !== a.pontuacao) {
+                    return b.pontuacao - a.pontuacao;
+                }
+                return a.tempo - b.tempo;
+            });
+
+            ranking = ranking.slice(0, 10);
+
+            if (ranking.length === 0) {
+                const li = document.createElement('li');
+                li.textContent = "Nenhum registro disponível.";
+                lista.appendChild(li);
+                return;
+            }
+
+            ranking.forEach((registro, index) => {
+                const li = document.createElement('li');
+                li.className = index === 0 ? 'top1' : '';
+                li.textContent = `${index + 1}º - ${registro.nome}: ${registro.pontuacao} pontos em ${registro.tempo}s`;
+                lista.appendChild(li);
+            });
+        }
+
+        // Evento para limpar ranking
+        clearButton.addEventListener('click', () => {
+            if (confirm("Tem certeza que deseja limpar o ranking?")) {
+                localStorage.removeItem('ranking');
+                carregarRanking(); // Atualiza a lista após limpar
+            }
+        });
+
+        // Carrega ranking ao abrir a página
+        carregarRanking();
+    </script>
+</body>
+</html>

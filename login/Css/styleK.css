@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    background-image: url("https://wallpapers.com/images/hd/high-resolution-world-map-with-national-flags-6egft7igudpt5xwc.jpg");
+    background-size: cover;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 354px;
+    width: 545px;
+    background-color: #000000e3;
+    border-radius: 20px;
+    align-items: center;
+    justify-items: center;
+}
+
+form h1 {
+    color: white;
+    font-family: arial;
+    font-weight: 300;
+    font-style: italic  ;
+}
+
+form input {
+    display: grid;
+    width: 332px;
+    height: 57px;
+    border-radius: 10px;
+    text-align: center;
+    color: #606060;
+    font-size: 23px;
+    font-family: arial;
+    font-weight: 300;
+    font-style: italic;
+}
+
+form button {
+    display: grid;
+    width: 110px;
+    height: 45px;
+    justify-items: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #50CAFF;
+    border: none;
+    cursor: pointer;
+    font-family: arial;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 15px;
+}
+
+@media (max-width: 560px) {
+    form {
+        width: 100%;
+    }
+}

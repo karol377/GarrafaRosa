@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    background-image: url("https://wallpapers.com/images/hd/high-resolution-world-map-with-national-flags-6egft7igudpt5xwc.jpg");
+    background-size: cover;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+h1{
+    display: grid;
+    text-align: center;
+    color: white;
+    font-family: "Open Sans Condesed", sans-serif;
+}
+h2{
+    font-family: "Open Sans Condesed", sans-serif;
+    color: white;
+}
+
+.container {
+    max-width: 600px;
+    margin: 200px;
+    padding: 20px;
+    margin-left: 600px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+#flag {
+    width: 300px;
+    height: auto;
+    margin: 20px 0;
+}
+
+button {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
