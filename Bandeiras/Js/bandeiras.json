@@ -1,0 +1,94 @@
+[
+    {
+        "id": "5c6a14d3d3df1352",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a855101356199c82",
+        "type": "http in",
+        "z": "5c6a14d3d3df1352",
+        "name": "",
+        "url": "ranking",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 210,
+        "y": 520,
+        "wires": [
+            [
+                "9715f5cb283f361f"
+            ]
+        ]
+    },
+    {
+        "id": "14b21b5ebcd77a4f",
+        "type": "function",
+        "z": "5c6a14d3d3df1352",
+        "name": "function ",
+        "func": "const nome = msg.payload.nome;\nconst pontuacao = msg.payload.pontuacao;\nconst tempo = msg.payload.tempo;\n\n// Mensagem personalizada\nmsg.payload = `Jogador: ${nome}\\n Pontuação: ${pontuacao}/10\\n Tempo: ${tempo}s`;\n\nmsg.headers = {\n    \"Access-Control-Allow-Origin\": \"*\"\n};\nreturn msg;\n\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 520,
+        "wires": [
+            [
+                "6916c6c458e12be0"
+            ]
+        ]
+    },
+    {
+        "id": "6916c6c458e12be0",
+        "type": "http response",
+        "z": "5c6a14d3d3df1352",
+        "name": "/response",
+        "statusCode": "",
+        "headers": {},
+        "x": 1000,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "9715f5cb283f361f",
+        "type": "file in",
+        "z": "5c6a14d3d3df1352",
+        "name": "",
+        "filename": "",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 430,
+        "y": 520,
+        "wires": [
+            [
+                "d41947bf7a2efeb1"
+            ]
+        ]
+    },
+    {
+        "id": "d41947bf7a2efeb1",
+        "type": "json",
+        "z": "5c6a14d3d3df1352",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 610,
+        "y": 520,
+        "wires": [
+            [
+                "14b21b5ebcd77a4f"
+            ]
+        ]
+    }
+]

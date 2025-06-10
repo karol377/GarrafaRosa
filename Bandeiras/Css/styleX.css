@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    font-family: Arial, sans-serif;
+    background-image: url(/imagens/JOGO.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    text-align: center;
+    height: 100vh;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 0.90fr 1fr 0.90fr;
+}
+h1 {
+    margin-top: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 49px;
+    font-weight: bold;
+    color: rgb(50, 51, 51);
+    margin-bottom: 20px;
+    grid-column: 2; 
+}
+
+.container {
+    display: grid;
+    grid-column: 2;
+    margin-top: 30px;
+    margin-bottom: 200px;
+    width: 100%;
+    height: 450px;
+    background: rgba(65, 57, 51, 0.493);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    grid-column: 2;
+    padding: 20px;
+}
+
+#flag {
+    width: 300px;
+    height: auto;
+    margin: 20px 0;
+}
+
+#options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 420px;
+}
+
+#options button {
+    flex: 0 1 calc(50% - 10px); 
+    min-width: 140px;
+    background-color: rgb(83, 82, 82);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s;
+}
+
+#options button:hover {
+    background-color: #999999;
+}
+
+#options button.correto {
+    background-color: green !important;
+    color: white;
+    cursor: default;
+}
+
+#options button.errado {
+    background-color: red !important;
+    color: white;
+    cursor: default;
+}
+
+#end-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#end-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#next-button {
+    background-color: #161616;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#next-button:hover {
+    background-color: #363636;
+    transform: scale(1.05);
+}
+

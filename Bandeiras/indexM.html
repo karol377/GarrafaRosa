@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>🏆 Ranking dos Jogadores</title>
+  <link rel="stylesheet" href="/Css/styleM.css">
+</head>
+<body>
+  <main class="container">
+    <h1>🏆 Ranking dos Jogadores </h1>
+    <div class="ranking-wrapper">
+      <div class="podium-container">
+        <div class="podium-place second">
+          <div class="medal second">2</div>
+          <div class="name" id="secondName">---</div>
+          <div class="score" id="secondScore">-- pts</div>
+          <div class="position">Segundo Lugar</div>
+        </div>
+        <div class="podium-place first">
+          <div class="medal first">1</div>
+          <div class="name" id="firstName">---</div>
+          <div class="score" id="firstScore">-- pts</div>
+          <div class="position">Primeiro Lugar</div>
+        </div>
+        <div class="podium-place third">
+          <div class="medal third">3</div>
+          <div class="name" id="thirdName">---</div>
+          <div class="score" id="thirdScore">-- pts</div>
+          <div class="position">Terceiro Lugar</div>
+        </div>
+      </div>
+
+      <div class="ranking-list">
+        <h2>Outros Jogadores</h2>
+        <ol id="ranking"></ol>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button onclick="voltarInicio()">🔙 Início</button>
+      <button onclick="limparRanking()">🗑️ Limpar Ranking</button>
+    </div>
+  </main>
+
+  <script src="/Js/scriptM.js"></script>
+</body>
+</html>
